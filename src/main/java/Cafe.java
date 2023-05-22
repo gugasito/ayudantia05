@@ -9,38 +9,32 @@ public class Cafe {
     private int gramos;
     private float ml;
     private Tamaño tamaño;
+    private float precio;
 
     public int getGramos() {
         return gramos;
-    }
-
-    public void setGramos(int gramos) {
-        this.gramos = gramos;
     }
 
     public float getMl() {
         return ml;
     }
 
-    public void setMl(float ml) {
-        this.ml = ml;
-    }
-
     public Tamaño getTamaño() {
         return tamaño;
     }
 
-    public void setTamaño(Tamaño tamaño) {
-        this.tamaño = tamaño;
+    public float getPrecio() {
+        return precio;
     }
 
-    public Cafe(int gramos, float ml, Tamaño tamaño) {
+    public Cafe(int gramos, float ml, Tamaño tamaño, float precio) {
         this.gramos = gramos;
         this.ml = ml;
         this.tamaño = tamaño;
+        this.precio = precio;
     }
 
     public String toString() {
-        return getGramos() + " gramos" + "|" + getMl() + " litros" + "|" + "Tamaño: " + getTamaño();
+        return getGramos() + " gramos" + "|" + getMl() + " litros" + "|" + "Tamaño: " + getTamaño() + "| Precio: " + getPrecio();
     }
 }

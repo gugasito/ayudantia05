@@ -5,46 +5,28 @@ public class Cafeteria {
     private String direccion;
     private String rs;
     private ArrayList<Cafe> listaCafes = new ArrayList<>();
-    private ArrayList<Rosquilla> listaDonas = new ArrayList<>();
+    private ArrayList<Producto> listaProductos = new ArrayList<>();
+    private ArrayList<Trabajador> listaTrabajadores = new ArrayList<>();
+    private ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getRs() {
-        return rs;
-    }
-
-    public void setRs(String rs) {
-        this.rs = rs;
     }
 
     public ArrayList<Cafe> getListaCafes() {
         return listaCafes;
     }
 
-    public void setListaCafes(ArrayList<Cafe> listaCafes) {
-        this.listaCafes = listaCafes;
+    public ArrayList<Producto> getListaProductos() {
+        return listaProductos;
     }
 
-    public ArrayList<Rosquilla> getListaDonas() {
-        return listaDonas;
+    public ArrayList<Trabajador> getListaTrabajadores() {
+        return listaTrabajadores;
     }
 
-    public void setListaDonas(ArrayList<Rosquilla> listaDonas) {
-        this.listaDonas = listaDonas;
+    public ArrayList<Cliente> getListaClientes() {
+        return listaClientes;
     }
 
     public Cafeteria(String nombre, String direccion, String rs) {
@@ -57,7 +39,8 @@ public class Cafeteria {
         getListaCafes().add(newCafe);
     }
 
-    public void eliminarCafe(int posi) {
+    public void comprarCafe(int posi, Cliente cliente) {
+        cliente.comprarCafe(getListaCafes().get(posi));
         this.getListaCafes().remove(posi);
     }
 
@@ -74,12 +57,21 @@ public class Cafeteria {
         return contador;
     }
 
-    public void agregarDona(Rosquilla newDona) {
-        getListaDonas().add(newDona);
+    public void agregarProducto(Producto producto) {
+        getListaProductos().add(producto);
     }
 
-    public void eliminarDona(int posi) {
-        this.getListaDonas().remove(posi);
+    public void agregarTrabajadores(Trabajador trabajador) {
+        getListaTrabajadores().add(trabajador);
+    }
+
+    public void asociarCliente(Cliente cliente) {
+        getListaClientes().add(cliente);
+    }
+
+    public void comprarProducto(Cliente cliente, int posi) {
+        cliente.comprarProducto(getListaProductos().get(posi));
+        this.getListaProductos().remove(posi);
     }
 }
 
