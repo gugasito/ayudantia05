@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         Cafeteria cafeteria1 = crearCafeteria("Cafeteria el mormón", "calle 1234", "@cafeEM");
         Cafe cafe1 = crearCafe(100, 250, Cafe.Tamaño.Mediano, 3);
-        Producto oreo = crearProducto("Oreo", Producto.Categoria.Galletas, 1000);
+        Producto oreo = crearProducto("Oreo", Producto.Categoria.Galletas, 1);
         Trabajador trabajador1 = crearTrabajador(Trabajador.Tipo.Barista);
         Cliente cliente1 = crearCliente();
         cafeteria1.agregarCafe(cafe1);
@@ -10,6 +10,8 @@ public class Main {
         cafeteria1.agregarTrabajadores(trabajador1);
         cafeteria1.asociarCliente(cliente1);
         cafeteria1.comprarCafe(0,cliente1);
+        System.out.println(cafeteria1.getListaClientes().get(0).getDinero());
+        cafeteria1.comprarProducto(cliente1,0);
         System.out.println(cafeteria1.getListaClientes().get(0).getDinero());
     }
 
@@ -33,6 +35,7 @@ public class Main {
 
     public static Trabajador crearTrabajador(Trabajador.Tipo tipo) {
         Trabajador trabajador = new Trabajador(tipo);
+        System.out.println("Trabajador: " + trabajador.getTipo() + " registrado correctamente");
         return trabajador;
     }
 

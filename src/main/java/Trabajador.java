@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-
 public class Trabajador {
     private Tipo tipo;
-    private ArrayList<Cliente> clientes = new ArrayList<>();
 
     public enum Tipo {
         Barista,
@@ -14,11 +11,7 @@ public class Trabajador {
         this.tipo = tipo;
     }
 
-    public ArrayList<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void agregarCliente(Cliente cliente) {
-        getClientes().add(cliente);
+    public Tipo getTipo() {
+        return tipo;
     }
 }
