@@ -1,3 +1,7 @@
+package principal;
+
+import datos.Registro;
+
 import java.util.ArrayList;
 
 public class Cafeteria {
@@ -40,6 +44,7 @@ public class Cafeteria {
     }
 
     public void comprarCafe(int posi, Cliente cliente) {
+        Registro.registrarDato(getListaCafes().get(posi),"src/main/java/datos/datos.txt");
         cliente.comprarCafe(getListaCafes().get(posi));
         this.getListaCafes().remove(posi);
     }
@@ -51,7 +56,7 @@ public class Cafeteria {
             if (getListaCafes().get(i).getTamaño().equals(tamaño)) {
                 posi = i;
                 contador++;
-                System.out.println("Cafe " + tamaño + " en la posicion: " + posi);
+                System.out.println("Principal.Cafe " + tamaño + " en la posicion: " + posi);
             }
         }
         return contador;
@@ -70,8 +75,13 @@ public class Cafeteria {
     }
 
     public void comprarProducto(Cliente cliente, int posi) {
+        Registro.registrarDato(getListaProductos().get(posi),"src/main/java/datos/datos.txt");
         cliente.comprarProducto(getListaProductos().get(posi));
         this.getListaProductos().remove(posi);
+    }
+
+    public void mostrarVentas(Cafeteria cafeteria) {
+        Registro.leerVentas(cafeteria, "src/main/java/datos/datos.txt");
     }
 }
 

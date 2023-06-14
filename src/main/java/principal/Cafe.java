@@ -1,3 +1,5 @@
+package principal;
+
 public class Cafe {
 
     public enum Tamaño {
@@ -35,6 +37,6 @@ public class Cafe {
     }
 
     public String toString() {
-        return getGramos() + " gramos" + "|" + getMl() + " litros" + "|" + "Tamaño: " + getTamaño() + "| Precio: " + getPrecio();
+        return "Cafe: [" + getGramos() + " gramos" + ", " + getMl() + " litros" + ", " + getTamaño() + ", " + getPrecio()+"]";
     }
 }
