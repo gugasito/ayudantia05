@@ -1,3 +1,5 @@
+package principal;
+
 import java.util.Random;
 
 public class Cliente {

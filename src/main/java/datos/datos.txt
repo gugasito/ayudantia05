@@ -1,0 +1,3 @@
+
+Cafe: [100 gramos, 250.0 litros, Mediano, 3.0]
+Producto: [Oreo, Galletas, 1.0]

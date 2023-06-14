@@ -1,3 +1,5 @@
+package principal;
+
 public class Trabajador {
     private Tipo tipo;
 
